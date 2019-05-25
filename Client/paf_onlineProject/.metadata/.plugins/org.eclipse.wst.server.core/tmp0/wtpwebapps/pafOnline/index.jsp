@@ -1,27 +1,26 @@
 <% page import = "com.paf.models.*" %>
 <% page import ="javax.sql.*" %>
-<% page language="java" contentType ="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%
-	Item item = new Item();
+	Member member = new Member();
 	String itemsGrid = "";
 	String rudFeedBack = "";
 	
 	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("save"))
 	{
-		rudFeedback = item.saveAnItem(request.getParameter("username"), request.getParameter("email"), 
+		rudFeedback = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
 				request.getParameter("nic"), request.getParameter("mobile"), request.getParameter("password"));
 	}
 	
 	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("update"))
 	{
-		rudFeedback = item.saveAnItem(request.getParameter("username"), request.getParameter("email"), 
+		rudFeedback = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
 				request.getParameter("nic"), request.getParameter("mobile"), request.getParameter("password"));
 
 	}
 	
 	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("remove"))
 	{
-		rudFeedback = item.deleteAnItem(request.getParameter("hidID"));
+		rudFeedback = member.delMember(request.getParameter("hidID"));
 
 	}
 	
@@ -125,9 +124,11 @@
 							<%
 								out.println(rudFeedback);
 							%>
-						</div> <%
- 	out.println(itemsGrid);
- %></td>
+						</div> 
+							<%
+							 	out.println(itemsGrid);
+							 %>
+					</td>
 				</tr>
 
 

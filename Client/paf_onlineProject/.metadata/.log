@@ -33,3 +33,8 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.jface.text 2 0 2019-05-25 21:55:55.075
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.resources 2 2 2019-05-25 22:43:23.759
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2019-05-25 22:43:23.760
+!MESSAGE The project description file (.project) for 'TestZZ' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

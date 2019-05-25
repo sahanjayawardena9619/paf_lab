@@ -66,4 +66,22 @@ public class Member {
 
 	}
 	
+	public String delMember(String memID) {
+		String res = null;
+		String sql = null;
+		Connection con = null;
+		Statement st = null;
+		try {
+			con = DBConnection.createConnection();
+			st = con.createStatement();
+			sql = "delete member where userID = '"+memID+"'";
+			st.executeUpdate(sql);
+			res = "Successfully Deleted...";
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
+	}
+	
 }
