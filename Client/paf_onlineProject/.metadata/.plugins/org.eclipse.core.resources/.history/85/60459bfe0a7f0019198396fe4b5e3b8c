@@ -1,0 +1,38 @@
+package com.paf.models;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class User {
+
+	public String login(String un, String pw)
+	{
+		Connection con = null;
+		Statement statement = null;
+		ResultSet resultSet = null;
+		
+		String userNameDB = "";
+		String passwordDB = "";
+
+		try
+		{
+			con = DBConnection.createConnection();
+			statement = con.createStatement();
+			resultSet = statement.executeQuery("select * from member where email = '"+un+"' AND password = '"+pw+"' ");
+			
+			while(resultSet.next())
+			{
+			
+
+			}
+			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return "Invalid...";
+	
+}
