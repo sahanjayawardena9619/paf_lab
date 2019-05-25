@@ -23,6 +23,7 @@ How to open and setup the Project
 
 07. Copy the URL and paste it in your preferred Web Browser
 
-08. You can get all the relevant details in the Project Database to Login into the System. 
-	Note : Login information for Seller and Customer are stored in 'Customer' and 'Seller'
-		   tables in the 'pafproject' database.
+08. Add jdbc connector which is located on 'C:\paf_labOnline\paf_lab\Client\paf_onlineProject' and then
+	select mysql-connector-java-5.1.42-bin
+	
+	How to add Connector : Right Click your project >> Build Path >> Configure Build Path >> Click >> Java Build Path >> Add External JARs >> Select Connector
