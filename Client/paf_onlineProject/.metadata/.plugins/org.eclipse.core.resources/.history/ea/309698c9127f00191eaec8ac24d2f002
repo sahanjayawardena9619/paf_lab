@@ -21,11 +21,11 @@
 	
 	if(request.getParameter("hidMode") != null && request.getParameter("hidMode"). equalsIgnoreCase("remove"))
 	{
-		rudFeedBack = member.delMember(request.getParameter("hidID"));
+		rudFeedback = member.delMember(request.getParameter("hidID"));
 
 	}
 	
-	itemsGrid = member.getItems();
+	itemsGrid = item.getItems();
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -123,7 +123,7 @@
 						value="Save"> <br> <br>
 						<div id="divStsMsgItem">
 							<%
-								out.println(rudFeedBack);
+								out.println(rudFeedback);
 							%>
 						</div> 
 							<%

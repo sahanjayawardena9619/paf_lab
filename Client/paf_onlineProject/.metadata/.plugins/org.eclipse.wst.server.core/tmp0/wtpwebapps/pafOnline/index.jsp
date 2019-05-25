@@ -1,30 +1,31 @@
-<% page import = "com.paf.models.*" %>
-<% page import ="javax.sql.*" %>
+<%@ page import = "com.paf.models.*" %>
+<%@ page import ="javax.sql.*" %>
+
 <%
 	Member member = new Member();
 	String itemsGrid = "";
 	String rudFeedBack = "";
 	
-	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("save"))
+	if(request.getParameter("hidMode") != null && request.getParameter("hidMode"). equalsIgnoreCase("save"))
 	{
-		rudFeedback = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
+		rudFeedBack = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
 				request.getParameter("nic"), request.getParameter("mobile"), request.getParameter("password"));
 	}
 	
-	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("update"))
+	if(request.getParameter("hidMode") != null && request.getParameter("hidMode"). equalsIgnoreCase("update"))
 	{
-		rudFeedback = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
+		rudFeedBack = member.saveMember(request.getParameter("username"), request.getParameter("email"), 
 				request.getParameter("nic"), request.getParameter("mobile"), request.getParameter("password"));
 
 	}
 	
-	if(request.getParameter(hidMode) != null && request.getParameter("hidMode"). equalsIgnoreCase("remove"))
+	if(request.getParameter("hidMode") != null && request.getParameter("hidMode"). equalsIgnoreCase("remove"))
 	{
-		rudFeedback = member.delMember(request.getParameter("hidID"));
+		rudFeedBack = member.delMember(request.getParameter("hidID"));
 
 	}
 	
-	itemsGrid = item.getItems();
+	itemsGrid = member.getItems();
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -122,7 +123,7 @@
 						value="Save"> <br> <br>
 						<div id="divStsMsgItem">
 							<%
-								out.println(rudFeedback);
+								out.println(rudFeedBack);
 							%>
 						</div> 
 							<%

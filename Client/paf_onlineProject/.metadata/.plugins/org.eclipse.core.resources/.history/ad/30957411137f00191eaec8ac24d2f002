@@ -123,7 +123,7 @@
 						value="Save"> <br> <br>
 						<div id="divStsMsgItem">
 							<%
-								out.println(rudFeedBack);
+								out.println(rudFeedback);
 							%>
 						</div> 
 							<%
